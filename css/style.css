@@ -1,0 +1,360 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700px;
+    height: 100vh;
+    background: hsl(0, 0%, 98%);
+    background-image: url('../images/bg-desktop-light.jpg');
+    background-repeat: no-repeat;
+    transition: 0.5s ease-in-out;
+    overflow-x: hidden;
+}
+
+h1 {
+    color: #fff;
+    margin-top: 0px;
+    margin-bottom: 19px;
+    margin-left: 450px;
+    float: top;
+    letter-spacing: 22px;
+}
+
+.active {
+    color: hsl(220, 98%, 61%);
+}
+
+#todoContainer {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    width: 100vw;
+    margin-right: 0px;
+}
+
+#themeButton {
+    border: none;
+    width: 10%;
+    height: 10%;
+    margin-left: 900px;
+    margin-top: 70px;
+    z-index: 2;
+}
+
+#themeIcon {
+    height: 20px;
+    width: 20px;
+    zoom: 1;
+    cursor: pointer;
+}
+
+#addTodo {
+    display: flex;
+    margin-left: 450px;
+    width: 499px;
+    align-items: left;
+    border: none;
+    height: 45px;
+    padding: 5px;
+    background-color: #fff;
+    margin-bottom: 26px;
+    cursor: pointer;
+}
+
+.addTodoLabel {
+    background-color: transparent;
+    margin-left: 0px;
+
+}
+
+#addButton {
+    margin-top: 9px;
+    width: 26px;
+    height: 26px;
+    padding: 14px;
+    margin-left: 20px;
+    margin-right: -16px;
+    border-radius: 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+    float: left;
+    border: 1px solid hsl(236, 33%, 92%);
+    cursor: pointer;
+}
+
+#addButton:hover {
+    background-image: url('../images/icon-check.svg'), linear-gradient(to right, #55DDFF, #C058F3);
+}
+
+
+#newTodo {
+    color: hsl(236, 9%, 61%);
+    width: 440px;
+    border: none;
+    height: 40px;
+    background-color: transparent;
+    font-size: 13px;
+    margin-right: 30px;
+    margin-left: 30px;
+    margin-top: 2px;
+    cursor: pointer;
+}
+
+#newTodo:focus {
+    outline: none;
+}
+
+#todoList {
+    width: 510px;
+    margin-left: 450px;
+    background-color: #fff;
+}
+
+li {
+    list-style: none;
+    font-size: 18px;
+    height: 35px;
+    padding: 12px;
+    text-align: center;
+    background: transparent;
+}
+
+#listItem {
+    border-bottom: 1px solid hsl(233, 11%, 84%);
+    cursor: pointer;
+}
+
+.circle {
+    background: transparent;
+    content: '';
+    width: 30px;
+    margin-left: 18px;
+    height: 30px;
+    border-radius: 50px;
+    border: 1px solid hsl(236, 33%, 92%);
+    float: left;
+    animation: circleBorder .7s;
+    transition: .7s linear;
+
+}
+
+
+/* Circle Animation */
+@keyframes circleBorder {
+
+    from {
+        border: 1px solid hsl(236, 33%, 92%);
+    }
+
+    to {
+        border: 1px solid #57ddff;
+        transition: .5s ease-in-out;
+    }
+}
+
+
+.circle:focus {
+    border: 1px solid #C058F3;
+    transition: border 0.5s ease-in-out;
+
+}
+
+.check {
+    background-image: url('../images/icon-check.svg'), linear-gradient(to right, #55DDFF, #C058F3);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+a.strike {
+    text-decoration: line-through;
+    text-decoration-color: hsl(233, 11%, 84%);
+    text-decoration-thickness: 2px;
+    color: hsl(233, 11%, 84%);
+
+}
+
+.cross {
+    margin-top: 5px;
+    width: 30px;
+    height: 30px;
+    background-image: url('../images/icon-cross.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    float: right;
+}
+
+button {
+    border: none;
+    background: transparent;
+}
+
+#todoBottom {
+    margin-left: 450px;
+    display: flex;
+    background-color: transparent;
+    align-items: center;
+    flex-direction: row;
+}
+
+.todoActions {
+    background: #fff;
+    width: 511px;
+    height: 50px;
+    margin-top: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 100px hsl(236, 33%, 92%);
+    position: absolute;
+    z-index: 1;
+}
+
+
+#filterButtonsContainer {
+    width: 0px;
+    float: center;
+    box-shadow: 0px 2px 100px hsl(236, 33%, 92%);
+    background: #fff;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: relative;
+    z-index: 2;
+    margin-left: 250px;
+    flex-direction: row;
+}
+
+#itemsLeft {
+    color: hsl(236, 9%, 61%);
+    font-size: 12px;
+    float: left;
+    margin-left: 6px;
+    text-align: left;
+    margin-top: 10px;
+
+}
+
+#clearCompletedButton {
+    color: hsl(236, 9%, 61%);
+    font-size: 12px;
+    float: right;
+    margin-right: 6px;
+    justify-content: right;
+    margin-top: 10px;
+    margin-bottom: 500px;
+    cursor: pointer;
+}
+
+#showAll {
+    display: none;
+}
+
+#showAllLabel {
+    color: hsl(236, 9%, 61%);
+    font-size: 12px;
+    text-align: center;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+
+#showAllLabel:hover {
+    color: hsl(235, 19%, 35%);
+}
+
+#showAllLabel.active {
+    color: hsl(220, 98%, 61%);
+}
+
+#showActive {
+    display: none;
+}
+
+#showActiveLabel {
+    color: hsl(236, 9%, 61%);
+    font-size: 12px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+#showActiveLabel:hover {
+    color: hsl(235, 19%, 35%);
+}
+
+#showActiveLabel.active {
+    color: hsl(220, 98%, 61%);
+}
+
+#showCompleted {
+    display: none;
+}
+
+#showCompletedLabel {
+    color: hsl(236, 9%, 61%);
+    font-size: 12px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+#showCompletedLabel:hover {
+    color: hsl(235, 19%, 35%);
+}
+
+#showCompletedLabel.active {
+    color: hsl(220, 98%, 61%);
+}
+
+#reorderInstructions {
+    margin-left: 60px;
+    text-align: center;
+    margin-top: 59px;
+    color: hsl(236, 9%, 61%);
+    font-size: 15px;
+    text-decoration: none;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+    background-color: hsl(235, 21%, 11%);
+    background-image: url("../images/bg-desktop-dark.jpg");
+    transition: 0.5s ease-in-out;
+}
+
+#addTodo.dark-todo {
+    background-color: hsl(235, 24%, 19%);
+    transition: 0.5s ease-in-out;
+}
+
+#todoList.dark-todoList {
+    background-color: hsl(235, 24%, 19%);
+    transition: 0.5s ease-in-out;
+    color: hsl(234, 39%, 85%);
+}
+
+
+#todoBottom.dark-bottom {
+    transition: 0.5s ease-in-out;
+    box-shadow: none;
+}
+
+#todoActions.dark-todoActions {
+    background-color: hsl(235, 24%, 21%);
+    transition: 0.5s ease-in-out;
+    box-shadow: none;
+}
+
+#filterButtonsContainer.dark-filterButtonsContainer {
+    background-color: hsl(235, 24%, 19%);
+    transition: 0.5s ease-in-out;
+    box-shadow: none;
+}

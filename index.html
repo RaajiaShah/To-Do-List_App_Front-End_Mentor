@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/responsive.css" type="text/css" media="all" />
+    <title>Todo App | Frontend Mentor </title>
+</head>
+<body>
+    <div id="todoContainer">
+        <button id="themeButton" type="submit" onclick="toggleTheme()">
+            <img id="themeIcon" src="images/icon-moon.svg" alt="Toggle Theme" />
+        </button>
+        <h1>TODO</h1>
+        <div id="addTodo">
+            <button id="addButton" type="submit" onclick="addTodoItem()"></button>
+            <label for="newTodo" class="addTodoLabel">
+                <input type="text" id="newTodo" placeholder="Create a new todo..." />
+            </label>
+        </div>
+        <ul id="todoList">
+        </ul>
+        <div id="todoBottom">
+            <div class="todoActions" id="todoActions">
+                <a id="itemsLeft"><span id="itemsLeftCount">0 </span> items left</a>
+                <button id="clearCompletedButton" class="clearButton" type="submit">Clear completed</button>
+            </div>
+            <div class="filterButtonsContainer" id="filterButtonsContainer">
+                <label for="showAll" id="showAllLabel" class="active"><b>All</b></label>
+                <input type="radio" name="filter" id="showAll" class="filterButton" />
+                
+                <label for="showActive" id="showActiveLabel"><b>Active</b></label>
+                <input type="radio" id="showActive" class="filterButton" />
+                
+                <label for="showCompleted" id="showCompletedLabel"><b>Completed</b></label>
+                <input type="radio" id="showCompleted" class="filterButton" />
+            </div>
+        </div>
+        <a id="reorderInstructions">Drag and drop to reorder list</a>
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
